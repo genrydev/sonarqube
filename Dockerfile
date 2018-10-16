@@ -1,7 +1,7 @@
 FROM openjdk:8-alpine
 
 ENV SONAR_VERSION=7.3 \
-    SONAR_DOWNLOAD_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION \
+    SONAR_DOWNLOAD_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
