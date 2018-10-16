@@ -1,7 +1,7 @@
 FROM openjdk:8-alpine
 
 ENV SONAR_VERSION=7.3 \
-    SONAR_DOWNLOAD_URL=https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
+    SONAR_DOWNLOAD_URL=https://binaries.sonarsource.com/Distribution/sonarqube \
     SONARQUBE_HOME=/opt/sonarqube \
     # Database configuration
     # Defaults to using H2
@@ -14,7 +14,7 @@ EXPOSE 9000
 
 RUN addgroup -S sonarqube && adduser -S -G sonarqube sonarqube
 
-ADD $SONAR_DOWNLOAD_URL /opt/sonarqube.zip
+ADD $SONAR_DOWNLOAD_URL/sonarqube-$SONAR_VERSION.zip /opt/sonarqube.zip
 # COPY sonarqube-$SONAR_VERSION.zip.asc /opt/sonarqube.zip.asc
 
 RUN set -x \
